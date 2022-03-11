@@ -29,11 +29,3 @@ class ReadFile():
             output_data["data"]["openlabel"]["frames"]["0"]["objects"][object] = {"object_data":{"bbox": [{"name":"bbox - "+object.split("-")[0],"stream":"Cam","val":[]}],"boolean":[{"name":"unclear","val":False}],"text":[{"name":"ObjectType","val":"car"}]}}
         result = json.dumps(output_data)
         return result
-
-
-if __name__ == '__main__':
-    path_to_annotell_annotation = 'annotell_1.json'
-    with open(path_to_annotell_annotation, 'r') as content:
-        json_body = json.load(content)
-    result = ReadFile().convert(json_body)
-    print(result)
